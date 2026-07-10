@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="p-8 bg-slate-800 text-white">
+    <div class="text-xl w-full text-center">Todo List</div>
+    <textarea id="todo" class="border border-gray-600 bg-gray-300 text-black p-4 my-4 mx-auto block"></textarea>
+    <button onclick="addtodo()" class="border border-gray-600 py-2 px-4 block mx-auto">add</button>
+    <div class="block my-8">
+        <h1 class="text-center my-2 py-4"></h1>
+        <ol id="todolist">
+        </ol>
+    </div>
+</body>
+<script>
+    function addtodo() {
+        const todo = String(document.getElementById("todo").value).trim();
+        if (!todo) return;
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <span>${todo}</span>
+            <button onclick="updatetodo(this)" class="border border-gray-200 py-2 px-4 ml-4">Update</button>
+            <button onclick="deletetodo(this)" class="border border-gray-200 py-2 px-4 ml-4">Delete</button>
+        `;
+        
+        document.getElementById("todolist").appendChild(li);
+        document.getElementById("todo").value = "";
+    }
+
+    function updatetodo(btn){
+        const todolist = prompt("Update List")
+        btn.parentElement.querySelector("span").innerHTML = todolist
+    }
+
+    function deletetodo(btn){
+        btn.parentElement.remove()
+    }
+</script>
+
+</html>
