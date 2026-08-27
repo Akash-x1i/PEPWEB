@@ -1,0 +1,119 @@
+<!-- create a webpage for an ecommerce website where a customer can place a order with below data 
+1. item list
+2. item quantity    
+3. billing and delivery
+4. mode of payment
+5. order confirmation or rejection
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    </head>
+
+<body>
+    <h1>Order Placement Form</h1>
+    <form >
+
+        <div class="section">
+            <h2>Select Items</h2>
+
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+                <tr>
+                    <td>Laptop</td>
+                    <td>999</td>
+                    <td><input type="number" name="laptop_qty" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Mouse</td>
+                    <td>25</td>
+                    <td><input type="number" name="mouse_qty" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Keyboard</td>
+                    <td>75</td>
+                    <td><input type="number" name="keyboard_qty" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Monitor</td>
+                    <td>299</td>
+                    <td><input type="number" name="monitor_qty" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Headphones</td>
+                    <td>120</td>
+                    <td><input type="number" name="headphones_qty" min="0" value="0"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Delivery Address</h2>
+            <input type="text" name="delivery_name" placeholder="Full Name">
+            <br>
+            <input type="text" name="delivery_address" placeholder="Street Address">
+            <br>
+            <input type="text" name="delivery_city" placeholder="City">
+            <br>
+            <input type="text" name="delivery_state" placeholder="State">
+            <br>
+            <input type="text" name="delivery_zip" placeholder="Zip Code">
+            <br>
+            <input type="text" name="delivery_country" placeholder="Country">
+        </div>
+        <br>
+        
+        <div class="section">
+            <h2>Mode of Payment</h2>
+            <label><input type="radio" name="payment_mode" value="credit_card" > Credit Card</label>
+            <br>
+            <label><input type="radio" name="payment_mode" value="debit_card"> Debit Card</label>
+            <br>
+            <label><input type="radio" name="payment_mode" value="paypal"> PayPal</label>
+            <br>
+            <label><input type="radio" name="payment_mode" value="bank_transfer"> Bank Transfer</label>
+            <br>
+            <label><input type="radio" name="payment_mode" value="cash_on_delivery"> Cash on Delivery</label>
+        </div>
+        <br>
+        
+
+        <div class="section">
+            <h2>Gender</h2>
+            <label><input type="radio" name="gender" value="male" required onclick="alert('Male')"> Male</label>
+            <br>
+            <label><input type="radio" name="gender" value="female" onclick="alert('Female')"> Female</label>
+        </div>
+
+        <br>
+
+        <div class="section">
+            <button type="submit" onclick="processform()">Submit</button>
+            <!-- <button type="reset" style=" margin-left: 10px;"><img src="../Assets/clear-button.png" alt="Clear Form" style="height: 30px;"></button> -->
+        </div>
+        
+    </form>
+
+    <script>
+        function processform(){
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            alert("Your data is submitted successfully!\nGender: " + gender);
+        }
+        function checkgender(){
+            if("male" === document.getElementById(''))
+        }
+    </script>
+
+    </body>
+
+</html>
