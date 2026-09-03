@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank KYC Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="block w-full p-8">
+    <h1 class="text-center mx-auto text-3xl font-bold">Bank Customer KYC Form</h1>
+
+    <form id="kycForm" class="mx-auto" action="#review" method="post" novalidate>
+        <fieldset id="personal" class="border border-1 border-solid p-4">
+            <legend>Personal Details</legend>
+
+            <p>
+                <label for="fullName">Full Name:</label><br>
+                <input class="border" type="text" id="fullName" name="fullName" required minlength="3">
+            </p>
+
+            <p>
+                <label for="dob">Date of Birth:</label><br>
+                <input class="border" type="date" id="dob" name="dob" required>
+            </p>
+
+            <p>
+                <label>Gender:</label><br>
+                <input class="border" type="radio" id="male" name="gender" value="Male" required>
+                <label for="male">Male</label>
+
+                <input class="border" type="radio" id="female" name="gender" value="Female" required>
+                <label for="female">Female</label>
+
+                <input class="border" type="radio" id="other" name="gender" value="Other" required>
+                <label for="other">Other</label>
+            </p>
+
+            <p>
+                <label for="mobile">Mobile Number:</label><br>
+                <input class="border" type="tel" id="mobile" name="mobile" pattern="[6-9][0-9]{9}" required>
+            </p>
+
+            <p>
+                <label for="email">Email ID:</label><br>
+                <input class="border" type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="accountType">Account Type:</label><br>
+                <select class="border" id="accountType" name="accountType" required>
+                    <option class="border" value="">Select</option>
+                    <option class="border">Savings</option>
+                    <option class="border">Current</option>
+                    <option class="border">Fixed Deposit</option>
+                    <option class="border">Loan</option>
+                </select>
+            </p>
+        </fieldset>
+        <br>
+        <fieldset id="address" class="border border-1 border-solid p-4">
+            <legend>Address Details</legend>
+
+            <p>
+                <label for="address1">Address:</label><br>
+                <textarea class="border" id="address1" name="address1" rows="4" cols="40" required></textarea>
+            </p>
+
+            <p>
+                <label for="city">City:</label><br>
+                <input class="border" type="text" id="city" name="city" required>
+            </p>
+
+            <p>
+                <label for="state">State:</label><br>
+                <input class="border" type="text" id="state" name="state" required>
+            </p>
+
+            <p>
+                <label for="pin">PIN Code:</label><br>
+                <input class="border" type="number" id="pin" name="pin" min="100000" max="999999" required>
+            </p>
+        </fieldset>
+        <br>
+        <fieldset id="documents" class="border border-1 border-solid p-4">
+            <legend>Document Details</legend>
+
+            <p>
+                <label for="aadhaar">Aadhaar Number:</label><br>
+                <input class="border" type="text" id="aadhaar" name="aadhaar" pattern="[0-9]{12}" required>
+            </p>
+
+            <p>
+                <label for="pan">PAN Number:</label><br>
+                <input class="border" type="text" id="pan" name="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
+            </p>
+
+            <p>
+                <label for="photo">Upload Photo:</label><br>
+                <input class="border text-xs py-1 px-2 text-center" type="file" id="photo" name="photo" accept="image/*" required>
+            </p>
+        </fieldset>
+
+        <button class="border p-2 mt-6" type="submit">Submit KYC</button>
+        <button class="border p-2 mt-6" type="reset">Reset</button>
+
+    </form>
+
+
+</body>
+</html>
